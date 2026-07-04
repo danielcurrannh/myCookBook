@@ -3,6 +3,7 @@ require_once __DIR__ . '/functions.php';
 $mode = $_GET['mode'] ?? 'new';
 $query = trim($_GET['q'] ?? '');
 $recipes = fetch_recipes($mode, $query);
+$pageClass = 'landing-page';
 include __DIR__ . '/header.php';
 ?>
 <section class="hero">

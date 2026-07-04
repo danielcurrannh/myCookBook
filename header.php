@@ -27,5 +27,4 @@ $currentUser = current_user();
         </div>
     </nav>
 </header>
-<main class="page">
-
+<main class="page <?= e($pageClass ?? '') ?>">
