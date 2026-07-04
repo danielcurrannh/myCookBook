@@ -6,7 +6,10 @@ require_once __DIR__ . '/config.php';
 function recipe_card(array $recipe): string
 {
     $thumb = $recipe['fld_thumbnailImage'] ?: 'assets/placeholder.svg';
-    $description = $recipe['fld_recipeDescription'] ?: substr(strip_tags($recipe['fld_recipeIngredients']), 0, 140);
+    $description = $recipe['fld_recipeDescription'] ?: strip_tags($recipe['fld_recipeIngredients']);
+    if (mb_strlen($description) > 250) {
+        $description = mb_substr($description, 0, 250) . '...';
+    }
     return '<a class="recipe-card" href="recipe.php?id=' . (int)$recipe['fld_id'] . '">' .
         '<img src="' . e($thumb) . '" alt="Recipe thumbnail">' .
         '<div><h3>' . e($recipe['fld_recipeTitle']) . '</h3>' .
