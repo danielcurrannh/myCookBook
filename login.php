@@ -19,7 +19,10 @@ include __DIR__ . '/header.php';
     <?php if ($error): ?><p class="error"><?= e($error) ?></p><?php endif; ?>
     <label>Username or email <input name="login" required></label>
     <label>Password <input name="password" type="password" required></label>
-    <button>Log in</button>
+    <div class="auth-actions">
+        <button>Log in</button>
+        <a class="button secondary small-button" href="forgot_password.php">Forgot password?</a>
+    </div>
 </form>
 <?php include __DIR__ . '/footer.php'; ?>
 

@@ -23,6 +23,8 @@ button, .button { background: var(--accent); color: #fff; border: 0; text-decora
 button:hover, .button:hover { background: var(--accent-dark); }
 .button { display: block; padding: 12px 14px; border-radius: 10px; margin-bottom: 12px; text-align: center; }
 .inline-button { display: inline-block; margin: 8px 8px 8px 0; }
+.small-button { display: inline-flex; align-items: center; padding: 12px 10px; margin: 0; font-size: .9rem; }
+.auth-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
 .recipe-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin: 8px 0; }
 .recipe-actions .button, .recipe-actions button { min-width: 150px; margin: 0; }
 .inline-form { display: inline-block; margin: 0; }
@@ -43,6 +45,8 @@ label { display: grid; gap: 6px; margin: 14px 0; font-weight: 700; }
 .check { display: flex; align-items: center; gap: 8px; }
 .error { color: var(--color-primary-hover); font-weight: 700; }
 .success { color: var(--color-success); font-weight: 700; }
+.muted, .auth-links { color: var(--muted); }
+.auth-links { margin-bottom: 0; text-align: center; }
 .detail-thumb { width: 100%; max-height: 420px; object-fit: cover; border-radius: 16px; background: var(--color-border); }
 .edit-thumb { width: 220px; max-width: 100%; border-radius: 12px; background: var(--color-border); }
 .preline { white-space: pre-line; line-height: 1.6; }

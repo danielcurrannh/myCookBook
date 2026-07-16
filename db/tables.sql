@@ -37,3 +37,12 @@ CREATE TABLE IF NOT EXISTS tbl_userSettings (
   UNIQUE KEY uq_tbl_userSettings_saved (fld_userId, fld_savedRecipeId)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+CREATE TABLE IF NOT EXISTS tbl_passwordResets (
+  fld_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  fld_userId INT UNSIGNED NOT NULL,
+  fld_tokenHash CHAR(64) NOT NULL UNIQUE,
+  fld_expiresAt DATETIME NOT NULL,
+  fld_createdAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  CONSTRAINT fk_tbl_passwordResets_user FOREIGN KEY (fld_userId) REFERENCES tbl_users(fld_id) ON DELETE CASCADE,
+  INDEX idx_tbl_passwordResets_expires (fld_expiresAt)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

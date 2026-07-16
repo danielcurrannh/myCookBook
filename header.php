@@ -26,6 +26,7 @@ $currentUser = current_user();
                 <?php else: ?>
                     <a href="login.php">Log in</a>
                     <a href="register.php">Register</a>
+                    <a href="forgot_password.php">Reset password</a>
                 <?php endif; ?>
             </div>
         </nav>
